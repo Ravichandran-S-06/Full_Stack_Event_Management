@@ -1,0 +1,57 @@
+/* Event card container */
+.event-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 10px; /* Adjust margin for spacing between cards */
+  max-width: calc(50% - 20px); /* Display two cards per row */
+  overflow: hidden;
+  position: relative;
+  text-align: center; /* Center align the content */
+  display: inline-block; /* Display cards inline */
+  transition: transform 0.3s; /* Add transition for hovering effect */
+}
+
+  /* Event card image */
+  .event-card img {
+    max-width: 80%; /* Reduce image size */
+    max-height: 150px; /* Set maximum image height */
+    vertical-align: middle; /* Align the image vertically center */
+    transition: transform 0.3s; /* Add transition for hovering effect */
+  }
+
+/* Event card content */
+.event-card-content {
+  padding: 20px;
+  height: 150px; /* Fixed height for content container */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.event-card h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Learn more button */
+
+
+/* Show content when learn more is clicked */
+.event-card.open .event-card-content {
+  height: auto; /* Set height to auto when card is open */
+}
+
+/* Hover effect */
+.event-card:hover {
+  transform: translateY(-5px); /* Move card up on hover */
+}
+
+  .event-card:hover img {
+    transform: scale(1.05); /* Increase image size on hover */
+  }

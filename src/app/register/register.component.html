@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Register for an Event</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+      <!-- Display error message when the name field is touched and not filled -->
+      <div *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].hasError('required')" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+      <!-- Display error message for email -->
+      <div *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].hasError('required')" class="text-danger">
+        Email is required.
+      </div>
+      <div *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].hasError('email')" class="text-danger">
+        Please enter a valid email address.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="event" class="form-label">Select Event</label>
+      <select id="event" class="form-select" formControlName="event">
+        <option value="">Choose...</option>
+        <option value="event1">Infothon</option>
+        <option value="event2">Symbiot</option>
+      </select>
+      <!-- Display error message when no event is selected -->
+      <div *ngIf="registerForm.controls['event'].touched && registerForm.controls['event'].hasError('required')" class="text-danger">
+        Selecting an event is required.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
